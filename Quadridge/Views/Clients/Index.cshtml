@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Quadridge.Models.Client>
+@{
+    ViewBag.Title = "Clients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Clients</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have any clients yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Client</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(client.FirstName, "Details", "Customers", new { id = client.ClientId }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
