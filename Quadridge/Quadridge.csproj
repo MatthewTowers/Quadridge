@@ -199,6 +199,11 @@
     <Compile Include="EntityConfigurations\RevenueConfiguration.cs" />
     <Compile Include="EntityConfigurations\StatusConfiguration.cs" />
     <Compile Include="EntityConfigurations\UserConfiguration.cs" />
+    <Compile Include="Migrations\201807281414175_InitialModel.cs" />
+    <Compile Include="Migrations\201807281414175_InitialModel.Designer.cs">
+      <DependentUpon>201807281414175_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ClientInteraction.cs" />
@@ -354,6 +359,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807281414175_InitialModel.resx">
+      <DependentUpon>201807281414175_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
