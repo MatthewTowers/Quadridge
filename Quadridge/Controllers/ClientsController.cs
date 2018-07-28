@@ -30,8 +30,8 @@ namespace Quadridge.Controllers
         {
             return new List<Client>
             {
-                new Client { ClientId = 1, FirstName = "John", Surname = "Smith" },
-                new Client { ClientId = 2, FirstName = "Mary", Surname = "Williams"}
+                new Client { ClientId = 1, Firstname = "John", Surname = "Smith" },
+                new Client { ClientId = 2, Firstname = "Mary", Surname = "Williams"}
             };
         }
     }
