@@ -6,6 +6,7 @@ namespace Quadridge
     using System.Linq;
     using Quadridge.EntityConfigurations;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Quadridge.Models;
 
     public partial class QuadridgeContext : DbContext
     {

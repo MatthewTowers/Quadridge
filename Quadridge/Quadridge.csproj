@@ -344,6 +344,7 @@
     <Folder Include="Views\Companies\" />
     <Folder Include="Views\Deals\" />
     <Folder Include="Views\Lawyers\" />
+    <Folder Include="Views\test\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-namespace Quadridge
+namespace Quadridge.Models
 {
     using System;
     using System.Collections.Generic;
