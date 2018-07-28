@@ -17,14 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="/images/logo.png" class="navbar-brand" />
-                 @Html.ActionLink("Quadridge CRM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="/"><img src="~/Content/Images/logoV2.png" class="navbar-brand" /></a>
+                @* @Html.ActionLink("", "Index", "Home", new { area = "" }, new { @class = "navbar-brand navbar-image" }) *@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Clients", "About", "Home")</li>
-                    <li>@Html.ActionLink("Deals", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Clients", "Index", "Clients")</li>
+                    <li>@Html.ActionLink("Deals", "Index", "Deals")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
