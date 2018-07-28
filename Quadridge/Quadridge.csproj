@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201807281414175_InitialModel.Designer.cs">
       <DependentUpon>201807281414175_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807281939422_ClientInteractionsCascadeOnDelete.cs" />
+    <Compile Include="Migrations\201807281939422_ClientInteractionsCascadeOnDelete.Designer.cs">
+      <DependentUpon>201807281939422_ClientInteractionsCascadeOnDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\Client.cs" />
@@ -338,6 +342,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Clients\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -364,6 +369,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807281414175_InitialModel.resx">
       <DependentUpon>201807281414175_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807281939422_ClientInteractionsCascadeOnDelete.resx">
+      <DependentUpon>201807281939422_ClientInteractionsCascadeOnDelete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

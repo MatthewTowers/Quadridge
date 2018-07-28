@@ -30,6 +30,10 @@ namespace Quadridge.Models
 
         [Required]
         [StringLength(255)]
+        public string Suburb { get; set; } 
+
+        [Required]
+        [StringLength(255)]
         public string City { get; set; }
 
         [StringLength(8)]

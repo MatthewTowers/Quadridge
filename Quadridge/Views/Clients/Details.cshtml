@@ -1,0 +1,36 @@
+﻿
+@Model Quadridge.Models.Client
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<ul>
+    <li>Firstname: @Model.Firstname</li>
+    <li>Surname: @Model.Surname </li>
+    <li>Company: @Model.CompanyId</li>
+    <li>Email:</li>
+    <li>Cell No:</li>
+    <li>Business No:</li>
+    <li>First Address Line: </li>
+    @if( Model.SecondAddressLine != null)
+    {
+< li > Second Address Line: </ LinkedList >
+    }
+    <li>Suburb: </li>
+    <li>City: </li>
+    <li>Zip: </li>
+    <li>Province: </li>
+    <li>Country: </li>
+</ul>
+
+
+<h2>Interactions</h2>
+<p>No Interactions yet.</p>
+<ul>
+    @for (var i = 0; i < 5; i++)
+    {
+        <li>Interaction @i</li>
+        }
+    </ul>

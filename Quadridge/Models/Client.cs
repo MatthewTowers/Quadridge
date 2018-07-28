@@ -46,6 +46,10 @@ namespace Quadridge.Models
         public string SecondAddressLine { get; set; }
 
         [Required]
+        [StringLength(255)]
+        public string Suburb { get; set; }
+
+        [Required]
         [StringLength(100)]
         public string City { get; set; }
 

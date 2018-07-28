@@ -5,6 +5,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Quadridge.Models;
+using System.Data.Entity;
 
 namespace Quadridge.Controllers
 {

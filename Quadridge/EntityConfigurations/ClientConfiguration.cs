@@ -56,7 +56,7 @@ namespace Quadridge.EntityConfigurations
             
                 HasMany(e => e.ClientInteractions)
                 .WithRequired(e => e.Client)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

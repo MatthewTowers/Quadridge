@@ -15,15 +15,23 @@ else
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Client</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Company</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var client in Model)
             {
-                <tr>
-                    <td>@Html.ActionLink(client.Firstname, "Details", "Customers", new { id = client.ClientId }, null)</td>
-                </tr>
+            <tr>
+                <td>@Html.ActionLink(client.Firstname, "Details", "Clients", new { id = client.ClientId }, null)</td>
+                <td>@Html.ActionLink(client.Surname, "Details", "Clients", new { id = client.ClientId }, null)</td>
+                @if (client.Company != null)
+                {
+                    <td>@client.Company.Name</td>
+                }
+
+            </tr>
             }
         </tbody>
     </table>
