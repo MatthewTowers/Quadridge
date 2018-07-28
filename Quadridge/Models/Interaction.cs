@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Quadridge.Models
+namespace Quadridge
 {
-    public class Interaction
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("Interaction")]
+    public partial class Interaction
     {
-        public int interactionId { get; set; }
-        public string interaction { get; set; }
-        public Interaction()
-        {
-        }
+        public int InteractionId { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string InteractionType { get; set; }
     }
 }

@@ -6,22 +6,22 @@ namespace Quadridge
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DealType")]
-    public partial class DealType
+    [Table("Revenue")]
+    public partial class Revenue
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DealType()
+        public Revenue()
         {
-            Deals = new HashSet<Deal>();
+            Expenses = new HashSet<Expense>();
         }
 
-        public int DealTypeId { get; set; }
+        public int RevenueId { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string Type { get; set; }
+        public double TotalRevenue { get; set; }
+
+        public double? Profit { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Deal> Deals { get; set; }
+        public virtual ICollection<Expense> Expenses { get; set; }
     }
 }

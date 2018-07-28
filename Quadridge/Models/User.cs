@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Quadridge.Models
+namespace Quadridge
 {
-    public class User
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("User")]
+    public partial class User
     {
         public int UserId { get; set; }
+
+        [Required]
+        [StringLength(100)]
         public string Name { get; set; }
-        public string password { get; set; }
-        public User()
-        {
-        }
+
+        [Required]
+        [StringLength(100)]
+        public string Password { get; set; }
     }
 }
