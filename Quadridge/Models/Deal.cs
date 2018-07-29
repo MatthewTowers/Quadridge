@@ -11,6 +11,8 @@ namespace Quadridge.Models
     {
         public int DealId { get; set; }
 
+        public string Name { get; set; }
+
         public int DealTypeId { get; set; }
 
         public int? RevenueId { get; set; }

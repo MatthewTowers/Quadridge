@@ -1,0 +1,45 @@
+﻿
+@model Quadridge.ViewModels.NewCilientViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Client</h2>
+@using (Html.BeginForm("Create", "Clients"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.Firstname, "First Name")
+        @Html.TextBoxFor(m => m.Client.Firstname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.Surname)
+        @Html.TextBoxFor(m => m.Client.Surname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.Company)
+        @Html.DropDownListFor(m => m.Client.Company, new SelectList(Model.Companies, "CompanyId", "Name"), "select Company", new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.Email)
+        @Html.TextBoxFor(m => m.Client.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.CellNo, "Cell Number")
+        @Html.TextBoxFor(m => m.Client.CellNo, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.BusinessNo, "Business Number")
+        @Html.TextBoxFor(m => m.Client.BusinessNo, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.FirstAddressLine,"First Address Line")
+        @Html.TextBoxFor(m => m.Client.FirstAddressLine, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Client.SecondAddressLine,"Second Address Line")
+        @Html.TextBoxFor(m => m.Client.SecondAddressLine, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}

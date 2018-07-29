@@ -11,52 +11,57 @@ namespace Quadridge.EntityConfigurations
     {
         public ClientConfiguration()
         {
-                Property(e => e.Firstname)
-                .IsUnicode(false);
 
-                Property(e => e.Surname)
-                .IsUnicode(false);
+            HasOptional(e => e.Company)
+            .WithMany(e => e.Clients)
+            .HasForeignKey(e => e.CompanyId);
 
-            
-                Property(e => e.Email)
-                .IsUnicode(false);
+            Property(e => e.Firstname)
+            .IsUnicode(false);
 
-            
-                Property(e => e.CellNo)
-                .IsUnicode(false);
+            Property(e => e.Surname)
+            .IsUnicode(false);
 
-            
-                Property(e => e.BusinessNo)
-                .IsUnicode(false);
 
-            
-                Property(e => e.FirstAddressLine)
-                .IsUnicode(false);
+            Property(e => e.Email)
+            .IsUnicode(false);
 
-            
-                Property(e => e.SecondAddressLine)
-                .IsUnicode(false);
 
-            
-                Property(e => e.City)
-                .IsUnicode(false);
+            Property(e => e.CellNo)
+            .IsUnicode(false);
 
-            
-                Property(e => e.Zip)
-                .IsUnicode(false);
 
-            
-                Property(e => e.Province)
-                .IsUnicode(false);
+            Property(e => e.BusinessNo)
+            .IsUnicode(false);
 
-            
-                Property(e => e.Country)
-                .IsUnicode(false);
 
-            
-                HasMany(e => e.ClientInteractions)
-                .WithRequired(e => e.Client)
-                .WillCascadeOnDelete(true);
+            Property(e => e.FirstAddressLine)
+            .IsUnicode(false);
+
+
+            Property(e => e.SecondAddressLine)
+            .IsUnicode(false);
+
+
+            Property(e => e.City)
+            .IsUnicode(false);
+
+
+            Property(e => e.Zip)
+            .IsUnicode(false);
+
+
+            Property(e => e.Province)
+            .IsUnicode(false);
+
+
+            Property(e => e.Country)
+            .IsUnicode(false);
+
+
+            HasMany(e => e.ClientInteractions)
+            .WithRequired(e => e.Client)
+            .WillCascadeOnDelete(true);
         }
     }
 }

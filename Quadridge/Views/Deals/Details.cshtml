@@ -1,0 +1,25 @@
+﻿@model Quadridge.Models.Deal
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name Details</h2>
+
+<ul>
+    @if (Model.RevenueId != null)
+    {
+        <li>@Html.ActionLink("Revenue : " + @Model.RevenueId, "Index", "Revenues", new { id = Model.RevenueId }, null)</li>
+    }
+    <li>Initial Date: @Model.Date.ToLongDateString()</li>
+    @if (Model.BankId != null)
+    {
+        <li>Bank: @Model.BankId</li>
+    }
+    @if (Model.LawyerId != null)
+    {
+        <li>Lawyer: @Model.LawyerId</li>
+    }
+        <li>Status: @Model.Status</li>
+</ul>
+

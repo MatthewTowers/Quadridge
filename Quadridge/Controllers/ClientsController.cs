@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Quadridge.Models;
 using System.Data.Entity;
+using Quadridge.ViewModels;
 
 namespace Quadridge.Controllers
 {
@@ -20,6 +21,24 @@ namespace Quadridge.Controllers
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
+        }
+
+        public ActionResult New()
+        {
+            var provinces = _context.Provinces.ToList();
+            var companies = _context.Companies.ToList();
+            var viewModel = new NewCilientViewModel
+            {
+                Provinces = provinces,
+                Companies = companies
+            };
+
+            return View(viewModel);
+        }
+
+        public ActionResult Create(Client client)
+        {
+            return View();
         }
 
         public ViewResult Index()
