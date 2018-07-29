@@ -6,7 +6,9 @@
 }
 
 <h2>Deals</h2>
-
+<p>
+    @Html.ActionLink("New Deal", "New", "Deals", null, new { @class = "btn btn-primary" })
+</p>
 @if (!Model.Any())
 {
     <p>We don't have any deals</p>

@@ -1,12 +1,12 @@
 ﻿
-@model Quadridge.ViewModels.NewDealViewModel
+@model Quadridge.ViewModels.DealFormViewModel
 @{
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>New Deal</h2>
-@using (Html.BeginForm("Create", "Clients"))
+@using (Html.BeginForm("Create", "Deals"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Deal.Name, "Deal Name")

@@ -28,5 +28,9 @@ namespace Quadridge.Models
         public virtual DealType DealType { get; set; }
 
         public virtual Status Status { get; set; }
+
+        public virtual Bank Bank { get; set; }
+
+        public virtual Lawyer Lawyer { get; set; }
     }
 }

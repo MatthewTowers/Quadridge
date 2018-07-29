@@ -6,7 +6,7 @@ using Quadridge.Models;
 
 namespace Quadridge.ViewModels
 {
-    public class NewCilientViewModel
+    public class ClientFormViewModel
     {
         public IEnumerable<Province> Provinces { get; set; }
         public IEnumerable<Company> Companies { get; set; }

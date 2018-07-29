@@ -27,7 +27,7 @@ namespace Quadridge.Controllers
         {
             var provinces = _context.Provinces.ToList();
             var companies = _context.Companies.ToList();
-            var viewModel = new NewCilientViewModel
+            var viewModel = new ClientFormViewModel
             {
                 Provinces = provinces,
                 Companies = companies
