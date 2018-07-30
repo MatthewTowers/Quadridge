@@ -10,6 +10,10 @@ namespace Quadridge.ViewModels
     public class DealFormViewModel
     {
         public IEnumerable<Client> Clients { get; set; }
+        public IEnumerable<DealType> DealTypes { get; set; }
+        public IEnumerable<Bank> Banks { get; set; }
+        public IEnumerable<Lawyer> Lawyers { get; set; }
+        public IEnumerable<Status> Statuses { get; set; }
         public int DealId { get; set; }
 
         [Required]

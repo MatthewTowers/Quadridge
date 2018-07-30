@@ -5,40 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Deal</h2>
+<h2>@Model.Title</h2>
 @using (Html.BeginForm("Create", "Deals"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Deal.Name, "Deal Name")
-        @Html.TextBoxFor(m => m.Deal.Firstname, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Name, "Deal Name")
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Client.Surname)
-        @Html.TextBoxFor(m => m.Client.Surname, new { @class = "form-control" })
+        @Html.LabelFor(m => m.DealTypeId, "Type of Deal")
+        @Html.DropDownListFor(m => m.DealTypeId, new SelectList(Model.DealTypes, "DealTypeId", "Type"), "select the Type of Deal", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Client.Company)
-        @Html.DropDownListFor(m => m.Client.Company, new SelectList(Model.Companies, "CompanyId", "Name"), "select Company", new { @class = "form-control" })
+        @Html.LabelFor(m => m.BankId, "Select a bank")
+        @Html.DropDownListFor(m => m.BankId, new SelectList(Model.Banks, "BankId", "Name"), "select a bank", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Client.Email)
-        @Html.TextBoxFor(m => m.Client.Email, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Client.CellNo, "Cell Number")
-        @Html.TextBoxFor(m => m.Client.CellNo, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Client.BusinessNo, "Business Number")
-        @Html.TextBoxFor(m => m.Client.BusinessNo, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Client.FirstAddressLine, "First Address Line")
-        @Html.TextBoxFor(m => m.Client.FirstAddressLine, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Client.SecondAddressLine, "Second Address Line")
-        @Html.TextBoxFor(m => m.Client.SecondAddressLine, new { @class = "form-control" })
+        @Html.LabelFor(m => m.LawyerId, "Select a lawyer")
+        @Html.DropDownListFor(m => m.LawyerId, new SelectList(Model.Lawyers, "LawyerId", "Name"), "select a Lawyer", new { @class = "form-control" })
     </div>
 
+    if (Model.Title == "Edit Deal")
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.StatusId) 
+            @Html.DropDownListFor(m => m.StatusId, new SelectList(Model.Statuses, "StatusId", "Name"), new { @class = "form-control" })
+        </div>
+    }
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+}

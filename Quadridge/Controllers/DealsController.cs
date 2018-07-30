@@ -49,10 +49,14 @@ namespace Quadridge.Controllers
             var clients = _context.Clients.ToList();
             var viewModel = new DealFormViewModel
             {
-                Clients = clients
+                Banks = _context.Banks.ToList(),
+                DealTypes = _context.DealTypes.ToList(),
+                Lawyers = _context.Lawyers.ToList(),
+                Clients = _context.Clients.ToList(),
+                Statuses = _context.Status.ToList()
             };
 
-            return View("DealForm", viewModel);
+            return View("DealsForm", viewModel);
         }
 
         public ActionResult Edit(int id)
@@ -64,7 +68,11 @@ namespace Quadridge.Controllers
 
             var viewModel = new DealFormViewModel(deal)
             {
-                Clients = _context.Clients.ToList()
+                Banks = _context.Banks.ToList(),
+                DealTypes = _context.DealTypes.ToList(),
+                Lawyers = _context.Lawyers.ToList(),
+                Clients = _context.Clients.ToList(),
+                Statuses = _context.Status.ToList()
             };
             return View("DealForm", viewModel);
         }
