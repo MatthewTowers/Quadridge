@@ -14,27 +14,57 @@
 }
 else
 {
-    <table class="table table-bordered table-hover">
+    <table id="clients" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Company</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var client in Model)
             {
-            <tr>
-                <td>@Html.ActionLink(client.Firstname, "Details", "Clients", new { id = client.ClientId }, null)</td>
-                <td>@Html.ActionLink(client.Surname, "Details", "Clients", new { id = client.ClientId }, null)</td>
-                @if (client.Company != null)
-                {
-                    <td>@client.Company.Name</td>
-                }
+                <tr>
+                    <td>@Html.ActionLink(client.Firstname, "Details", "Clients", new { id = client.ClientId }, null)</td>
+                    <td>@Html.ActionLink(client.Surname, "Details", "Clients", new { id = client.ClientId }, null)</td>
+                    @if (client.Company != null)
+                    {
+                        <td>@client.Company.Name</td>
+                    }
+                    <td>
+                        <button data-client-id="@client.ClientId" class="btn-link js-delete">Delete</button>
+                    </td>
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#clients").DataTable();
+
+
+            $("#clients").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you wan to delete this client?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/clients/" + button.attr("data-client-id"),
+                            method: "DELETE",
+                            success: function () {
+                                // console.log("Success");
+                                button.parents("tr").remove();
+                            } // bootbox if
+                        }); // ajax
+                    }
+                }); //bootbox
+            }); //click function
+        }); // ready function
+    </script>
 }

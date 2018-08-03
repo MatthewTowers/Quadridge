@@ -93,7 +93,14 @@ namespace Quadridge.Controllers
             if (deal.DealId == 0)
             {
                 deal.Date = DateTime.Now;
+                deal.StatusId = Deal.InProgress;
+               // Revenue revenue = new Revenue
+               // {
+              //      TotalRevenue = 0
+              //  };
+              //  deal.RevenueId = revenue.RevenueId;
                 _context.Deals.Add(deal);
+               // _context.Revenues.Add(revenue);
             }
             else
             {

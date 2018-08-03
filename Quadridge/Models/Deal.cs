@@ -11,6 +11,8 @@ namespace Quadridge.Models
     {
         public int DealId { get; set; }
 
+        [Required]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         public int DealTypeId { get; set; }
@@ -27,10 +29,13 @@ namespace Quadridge.Models
 
         public virtual DealType DealType { get; set; }
 
+        [ForeignKey("StatusId")]
         public virtual Status Status { get; set; }
 
         public virtual Bank Bank { get; set; }
 
         public virtual Lawyer Lawyer { get; set; }
+
+        public static readonly byte InProgress = 1;
     }
 }
