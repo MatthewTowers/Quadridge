@@ -20,7 +20,7 @@ else
             <tr>
                 <th>Name</th>
                 <th>Clients</th>
-                <th>Company</th>
+                <th>Test</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +28,9 @@ else
             {
                 <tr>
                     <td>@Html.ActionLink(deal.Name, "Details", "Deals", new { id = deal.DealId }, null)</td>
+                    <td>
+                        <button class= "js-test" onclick="bootbox.alert('hello')">Test</button>
+                    </td>
                 </tr>
             }
         </tbody>

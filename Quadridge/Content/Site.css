@@ -31,3 +31,7 @@ footer {
     text-align: center;
 
 }
+
+.fade {
+    opacity: 80;
+}
